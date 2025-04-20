@@ -1,32 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenidos a la Página Educativa</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenidos a la Página Educativa</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenidos al Portal Educativo</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Ejercicios</a></li>
-                <li><a href="#">Tareas</a></li>
-                <li><a href="#">Reseñas</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Introducción</h2>
-            <p>En esta página encontrarás todo lo necesario para tus clases.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Página Educativa | Todos los derechos reservados</p>
-    </footer>
+  <header>
+    <h1>Bienvenidos al Portal Educativo</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+        <li><a href="#" onclick="mostrarSeccion('ejercicios')">Ejercicios</a></li>
+        <li><a href="#" onclick="mostrarSeccion('tareas')">Tareas</a></li>
+        <li><a href="#" onclick="mostrarSeccion('resenas')">Reseñas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="seccion">
+      <h2>Introducción</h2>
+      <p>En esta página encontrarás todo lo necesario para tus clases.</p>
+    </section>
+
+    <section id="ejercicios" class="seccion" style="display: none;">
+      <h2>Ejercicios</h2>
+      <p>Aquí podrás practicar con actividades interactivas.</p>
+    </section>
+
+    <section id="tareas" class="seccion" style="display: none;">
+      <h2>Tareas</h2>
+      <p>Sube aquí tus tareas y revisa las instrucciones.</p>
+    </section>
+
+    <section id="resenas" class="seccion" style="display: none;">
+      <h2>Reseñas</h2>
+      <p>Comparte una breve reseña personal sobre lo aprendido.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Página Educativa | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.seccion');
+      secciones.forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
