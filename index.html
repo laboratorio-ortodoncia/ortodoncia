@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenidos a la Página Educativa</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .banner {
+      background-color: #f0f0f0;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .contenido-banner {
+      display: none;
+      margin-top: 10px;
+      background-color: #fff;
+      padding: 10px;
+      border-left: 4px solid #007BFF;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -39,6 +55,57 @@
       <h2>Reseñas</h2>
       <p>Comparte una breve reseña personal sobre lo aprendido.</p>
     </section>
+
+    <!-- Enlaces de Apoyo al final de la página -->
+    <div id="enlaces-apoyo">
+      <h2>Enlaces de Apoyo</h2>
+
+      <div class="banner" onclick="toggleContenido('iaSorprendio')">
+        LA IA ME SORPRENDIÓ POR
+        <div id="iaSorprendio" class="contenido-banner">
+          <p>La Inteligencia Artificial ha avanzado significativamente, y su desarrollo cada vez más está sorprendiéndonos.</p>
+          <ul>
+            <li>Realmente parece que estuviéramos interactuando con alguien más.</li>
+            <li>Nos ayuda con tareas cotidianas, podría convertirse en nuestro asistente personal, aligerando la carga de trabajo.</li>
+            <li>Podemos desarrollar proyectos con conocimientos básicos.</li>
+            <li>En el campo de la salud tiene un lugar muy importante que debemos explorar porque nos permitirá ser más precisos en los diagnósticos, sobre todo en aquellos casos de gran complejidad o de ambigüedad.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner" onclick="toggleContenido('iaPreocupa')">
+        DE LA IA ME PREOCUPA QUE Y CREO QUE
+        <div id="iaPreocupa" class="contenido-banner">
+          <p>El uso indebido de la IA conlleva a grandes riesgos:</p>
+          <ul>
+            <li>Manipulación de la población para lograr objetivos negativos.</li>
+            <li>Violación de derechos humanos como la privacidad.</li>
+            <li>Desplazamiento de puestos de trabajo.</li>
+            <li>Impacto en el medio ambiente (Consumo excesivo de agua y energía).</li>
+          </ul>
+          <p><strong>Recomiendo…</strong></p>
+          <ul>
+            <li>Implementar cátedra de IA desde la primera escuela, además de planificar que el resto de la población pueda acceder a mayor información sobre el tema, esto podría contribuir en que su uso sea más adecuado.</li>
+            <li>Ajustar los límites de uso de la IA.</li>
+            <li>Nunca compartir datos personales con la IA.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner" onclick="toggleContenido('miVidaIA')">
+        MI NUEVA VIDA CON IA
+        <div id="miVidaIA" class="contenido-banner">
+          <p><strong>Mi nuevo desarrollo profesional:</strong></p>
+          <ul>
+            <li>Como docente podría hacer uso de las herramientas de IA para mejorar el conocimiento de los alumnos, haciendo más didácticos los temas de difícil comprensión.</li>
+            <li>Ajustar el conocimiento a cada estudiante, permitiendo un acompañamiento personalizado.</li>
+            <li>En la clínica tendremos la posibilidad de mejorar los tiempos de diagnósticos en casos de difícil predicción.</li>
+            <li>Tener planes de tratamiento personalizados.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <footer>
@@ -50,6 +117,11 @@
       const secciones = document.querySelectorAll('.seccion');
       secciones.forEach(sec => sec.style.display = 'none');
       document.getElementById(id).style.display = 'block';
+    }
+
+    function toggleContenido(id) {
+      const contenedor = document.getElementById(id);
+      contenedor.style.display = contenedor.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </body>
